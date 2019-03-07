@@ -1,0 +1,58 @@
+<!--
+    利用::after,::before以及animation实现太极图
+ -->
+<main></main>
+<style>
+  body {
+    height: 1000px;
+    background: gray;
+    display: flex;
+  }
+  main {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: auto;
+    background: linear-gradient(
+      to bottom,
+      #000000 0%,
+      #000000 50%,
+      #ffffff 51%,
+      #ffffff 100%
+    );
+    position: relative;
+    animation-name: xuanzhuan;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+  }
+  @keyframes xuanzhuan {
+    from {
+      transform: rotate(360deg);
+    }
+  }
+  main::after,
+  main::before {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 10px;
+    border: 20px solid;
+  }
+  main::before {
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    border-color: #fff;
+  }
+  main::after {
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: 25px;
+    border-color: #000;
+  }
+</style>
