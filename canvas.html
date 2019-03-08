@@ -1,0 +1,32 @@
+<!--
+    用 canvas 画线，画矩形，画 fill 的，画 stroke 的
+    改变颜色，改变线宽
+ -->
+<canvas></canvas>
+<script>
+    let canvas=document.querySelector('canvas')
+    let ctx = canvas.getContext('2d');
+
+    let clientWidth = document.documentElement.clientWidth ;
+    let clientHeight = document.documentElement.clientHeight;
+
+    canvas.width = clientWidth
+    canvas.height = clientHeight
+
+    ctx.lineWidth = 5
+    ctx.fillStyle = 'red'
+    ctx.strokeStyle = 'blue'
+    ctx.fillRect(5,5,44,44)
+    ctx.strokeRect(3,3,50,50)
+
+    ctx.beginPath()
+    ctx.moveTo(100,50)
+    ctx.lineTo(80,80)
+    ctx.lineTo(80,50)
+    ctx.lineTo(100,50)
+    ctx.closePath()
+    ctx.stroke()
+    ctx.fill()
+
+    // http://js.jirengu.com/zeden/5/edit?html,css,js,output
+</script>

@@ -1,0 +1,128 @@
+<p>
+    overflow包含了属性visible,hidden,scroll,auto <br>
+    除默认值visible之外，都会创建 <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context">”块格式化上下文“</a>
+
+</p>
+<h3>属性</h3>
+<p>
+        <code>scroll</code> ：只有在设定了容器高度，或者"white-space"为”nowrap“时有效果，即使被裁剪也不会影响打印机
+
+     </p>
+     <p>   auto：取决于用户代理。 如果内容适合填充框内部，则它看起来与可见内容相同，但仍会建立新的块格式化上下文。 如果内容溢出，桌面浏览器会提供滚动条。
+
+           </p>
+
+<h3>语法</h3>
+<p>
+
+        overflow:visible; <br>
+        overflow:overflow-y overflow-x;
+</p>
+           <main>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae totam dolores
+    , enim a quos suscipit neque nulla. Nostrum dignissimos vel fugiat officia. V
+    elit dicta reprehenderit, nam ipsum quis similique illo.
+    Obcaecati quia odio sed doloremque consequuntur eum dolore voluptates aliquam?
+     Eveniet consequatur, repellat modi earum, dolore eligendi ea dolorum veritatis
+     nihil non totam quam quisquam atque, iure recusandae eaque explicabo.
+    Incidunt fugit, aliquam iste saepe fuga, eos perspiciatis iusto harum maiores nobi
+    s accusantium a non quam excepturi rem in atque dolore exercitationem ratione temp
+    oribus, quasi totam rerum. Alias, beatae aliquam?
+    Laboriosam in quisquam culpa consectetur tenetur doloremque optio nihil, atque un
+    de praesentium voluptate ipsum quae minus, sunt perspiciatis aut explicabo. Fugi
+    t, earum id ea adipisci eveniet temporibus maiores aperiam placeat?
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae totam dolores
+    , enim a quos suscipit neque nulla. Nostrum dignissimos vel fugiat officia. V
+    elit dicta reprehenderit, nam ipsum quis similique illo.
+    Obcaecati quia odio sed doloremque consequuntur eum dolore voluptates aliquam?
+     Eveniet consequatur, repellat modi earum, dolore eligendi ea dolorum veritatis
+     nihil non totam quam quisquam atque, iure recusandae eaque explicabo.
+    Incidunt fugit, aliquam iste saepe fuga, eos perspiciatis iusto harum maiores nobi
+    s accusantium a non quam excepturi rem in atque dolore exercitationem ratione temp
+    oribus, quasi totam rerum. Alias, beatae aliquam?
+    Laboriosam in quisquam culpa consectetur tenetur doloremque optio nihil, atque un
+    de praesentium voluptate ipsum quae minus, sunt perspiciatis aut explicabo. Fugi
+    t, earum id ea adipisci eveniet temporibus maiores aperiam placeat?
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae totam dolores
+    , enim a quos suscipit neque nulla. Nostrum dignissimos vel fugiat officia. V
+    elit dicta reprehenderit, nam ipsum quis similique illo.
+    Obcaecati quia odio sed doloremque consequuntur eum dolore voluptates aliquam?
+     Eveniet consequatur, repellat modi earum, dolore eligendi ea dolorum veritatis
+     nihil non totam quam quisquam atque, iure recusandae eaque explicabo.
+    Incidunt fugit, aliquam iste saepe fuga, eos perspiciatis iusto harum maiores nobi
+    s accusantium a non quam excepturi rem in atque dolore exercitationem ratione temp
+    oribus, quasi totam rerum. Alias, beatae aliquam?
+    Laboriosam in quisquam culpa consectetur tenetur doloremque optio nihil, atque un
+    de praesentium voluptate ipsum quae minus, sunt perspiciatis aut explicabo. Fugi
+    t, earum id ea adipisci eveniet temporibus maiores aperiam placeat?
+</main>
+
+<style>
+    *{
+        background: rgba(0,0,0,.1);
+
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    main{
+        margin: auto;
+        height: 300px;
+        width: 300px;
+        border: 10px solid #000;
+        padding: 20px;
+        white-space: pre;
+        overflow: scroll;
+    }
+</style>
+
+
+<p>
+    client代表padding+自身
+    scroll代表
+</p>
+
+<ul>
+
+    <li>
+        <code>scrollWidth</code>，<code>scrollHeigth</code>代表了自身滚动部分宽高+padding <br>
+            <code>scrollTop</code>，<code>scrollLeft</code>代表了自身滚动距离原始位置的长度（当前位置到边框）
+    </li>
+
+    <li>
+            <code>clientHeigth</code>,<code>clientWidth</code>代表自身显示部分宽高+padding <br>
+            <code>clientTop</code>，<code>clientLeft</code>代表了自身border的宽高
+        </li>
+
+    <li>
+            <code>offsetHeigth</code>，<code>offsetWidth</code>包括自身显示部分+padding+border 的宽高 <br>
+            <code>offsetTop</code>，<code>offsetLeft</code>包括自身左上角相对于 offsetParent 节点的位移
+        </li>
+
+</ul>
+<ul>
+    <li>
+        offsetParent为父节点中 postion 不为 static 的元素，如果为 body，可以忽略
+    </li>
+</ul>
+
+
+<p>
+    <b>试一试</b> <br>
+    在控制台中输入以下内容
+    <pre>
+        $('main').clientHeight
+        $('main').offsetHeight
+        $('main').scrollHeight
+        $('main').clientWidth
+        $('main').offsetWidth
+        $('main').scrollWidth
+        $('main').clientTop
+        $('main').offsetTop
+        $('main').scrollTop
+        $('main').clientLeft
+        $('main').clientLeft
+        $('main').scrollLeft
+    </pre>
+</p>
