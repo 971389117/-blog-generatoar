@@ -1,0 +1,95 @@
+<p id='idP' class='classP classB' name='nameP' wo='woshiP' data-foo='bar' data-bar-hello='bar hahah'>我是一个 P</p>
+
+<h3>
+    获取元素的属性
+</h3>
+<p>
+        元素.attributes返回元素对象的所有属性，它是一个实时的array like 动态对象    <br>
+        它的每一个元素也是一个属性对象 <br>
+        planA：attributes <br>
+        <pre>
+            $('#idP').attributes
+            $('#idP').attributes[0]
+            $('#idP').attributes.id.value
+            $('#idP').attributes['id'].name  //同 nodeName / nodeValue
+        </pre>
+
+        planB：Element.标准属性 它获得的是属性值
+        <pre>
+            $('#idP').id // ->string
+            $('#idP').htmlFor  // 这个是假的
+            //获取class 的字符串形式 形如："classP classB"
+            $('#idP').className
+        </pre>
+        getAttribute 它和planB 的返回值一样 <br>
+        planC：元素.getAttribute(属性名)
+        <pre>
+            $('#idP').getAttribute('id')
+        </pre>
+
+       <b> 获得所有属性名字，帮助获得属性值</b><br>
+        元素.getAttributeNames() ：Array <br>
+        <b> 判断是否有属性</b> <br>
+        元素.hasAttribute(属性名) <br>
+        元素..hasAttributes()
+</p>
+
+<h3>
+    修改元素的属性
+</h3>
+<p>
+    planA:   <br>
+    planB:  <br>
+    planC:元素.setAttribute() 用于修改和添加属性
+    <pre>
+        $('p').setAttribute('attrA','valueA')
+    </pre>
+    <b>移除属性</b> <br>
+    元素.removeAttribute()
+</p>
+
+<p>
+    注意：虽然有三种方法，但是比较推荐 planC，另外，class 的读写也有专门的方法
+</p>
+
+<h3>class的读写</h3>
+<p>
+    planA:元素.className 返回的是字符串属性
+    planB:元素.classList 指向一个类似数组的对象，该对象的length 属性只读
+    <pre>
+
+  $('#idP').classList.add('classAdd')
+  $('#idP').classList.remove('classAdd')
+  $('#idP').classList.item(0)
+  $('#idP').classList.contains('classNB')  // false
+  $('#idP').classList.toggle('classToggle',true)  //true
+                    <!-- $('#idP').classList
+                    //添加一个 class
+                    $('#idP').classList.add('classAdd')
+                    //删掉一个 class
+                    $('#idP').classList.remove('classAdd')
+                    //返回第 0 个 class的字符串
+                    $('#idP').classList.item(0)
+                    // 判断是否包含
+                    $('#idP').classList.contains('classNB')  // false
+                    //toggle方法可以接受一个布尔值，作为第二个参数。如果为true，则添加该属性；如果为false，则去除该属性。
+                    $('#idP').classList.toggle('classToggle',true)  //true -->
+
+    </pre>
+</p>
+
+<h3>
+    为 HTML 元素附加数据
+</h3>
+<p>
+    规范为我们提供了标准的解决方法 <br>
+
+    <pre>
+        // 返回data 属性的集合
+        $('p').dataset
+        // 读写 删除 data属性
+        delete $('p').dataset.foo
+        $('p').dataset.foo='foo'
+        $('p').dataset.barHello
+    </pre>
+</p>
