@@ -1,0 +1,23 @@
+*{
+    background-color: rgba(0,0,0,.1);
+}
+.warrper{
+    display: grid;
+    grid-template:
+    "left-bar main"
+    "summa summa"
+    /1fr 7fr;
+    grid-gap: 2px 2px;
+}
+.left-bar{
+    grid-area: left-bar;
+    min-height: 200px;
+}
+.main{
+    grid-area: main;
+    min-height: 200px;
+}
+.summa{
+    grid-area: summa;
+    min-height: 50px;
+}

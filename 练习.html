@@ -1,0 +1,35 @@
+<p>
+    className
+    classList
+    innerHTML
+    outerHTML
+    dataset
+    attributes返回元素对象的所有属性，它是一个实时的array like 动态对象
+    style
+</p>
+<p>
+    元素属性的读写
+    planA：attributes
+    <pre>
+        $('#idP').attributes
+        $('#idP').attributes[0]
+        $('#idP').attributes.id.value
+        $('#idP').attributes['id'].name  //同 nodeName / nodeValue
+    </pre>
+    planB：Element.标准属性
+    <pre>
+        $('#idP').id // ->string
+        $('#idP').htmlFor
+        //获取class 的字符串形式 形如："classP classB"
+        $('#idP').className
+    </pre>
+</p>
+<p>
+    用 classList 操作 class
+
+</p>
+<p id='idP' class='classP classB' name='nameP' wo='woshiP'>我是一个 P</p>
+
+<script>
+
+</script>
