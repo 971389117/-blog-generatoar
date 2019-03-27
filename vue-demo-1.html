@@ -1,0 +1,117 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+.bg{
+    height: 30px;
+    width: 30px;
+    background: #000;
+}
+.bd{
+    border: 5px solid red;
+}
+</style>
+
+<div id="app1">
+        {{'apd' | filter1 | filter2}}
+        {{nisuana }}
+        {{nisuana2=321}}
+        {{nisuana3}}
+        <!-- data 中的属性会覆盖计算属性 -->
+        {{nisuana44}}
+        <button @click=btnClick :class="{bg:isYou,bd:isBd}">按钮</button>
+        <span :class="[classA,classB]">我是你</span>
+        <span :style="[styleA,styleB]">你是我</span>
+        <img :src="imgURL" alt="">
+        <img :src="'dizhi/to/xx/'+fileName" alt="">
+        <span :class=[classC,{classD:iscd,classE:isce}]></span>
+        <div v-bind="{ id: someProp, 'other-attr': otherProp }"></div>
+        <span :class=classF></span>
+        <span :class=classG()></span>
+</div>
+<script>
+
+Vue.filter('filter1',function(value){
+    console.log('filter1 ',value)
+    return value.toUpperCase()
+})
+let app1=new Vue({
+    el:'#app1',
+    data:{
+        msg:'msg',
+        jisuanA:1,
+        jisuanB:2,
+        isYou:true,
+        isBd:true,
+        classA:'classa',
+        classB:'classb',
+        styleA:{
+            color:'red',
+            fontSize:'20px',
+        },
+        styleB:{
+            outline:'1px solid orange'
+        },
+        imgURL:'ceshila',
+        fileName:'fileNam31231e',
+        classC:'classc',
+        iscd:true,
+        isce:true,
+        someProp:'idSome',
+        otherProp:'otherSome',
+        nisuana4:'蒜泥狠4'
+    },
+    methods:{
+        btnClick:function(){
+            console.log('btnClick')
+            this.isYou=!this.isYou
+            this.isBd=!this.isBd
+        },
+        classG:function(){return 'classG'}
+    },
+    computed:{
+        classF:function(){
+            return 'ceshi'
+        },
+        nisuana:function(){
+            return '蒜泥狠'
+        },
+        nisuana2:{
+            set:function(value){
+                console.log(423141)
+                this.value=(value+000)
+            },
+            get:function(){
+                console.log(this.value)
+                return this.value
+            }
+        },
+        nisuana3:function(){
+            return this.jisuanA+this.jisuanB+this.$data
+        },
+        nisuana44:function(){
+            this.nisuana4=999
+            return this.nisuana4
+        }
+
+    },
+    filters:{
+        filter2:function(value){
+            return value+'~小尾巴'
+        }
+    },
+    created:function(){
+        console.log('created')
+    },
+    mounted:function(){
+        console.log('mounted')
+    },
+    beforeDestory:function(){
+
+        console.log('beforeDestory')
+    }
+
+})
+
+
+
+
+</script>

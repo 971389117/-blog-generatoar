@@ -1,0 +1,20 @@
+<script>
+function getJSON(method,url){
+    new Promise(function(resolve,reject){
+        let xhr=new XMLHttpRequest
+        xhr.open(method,url)
+        xhr.onreadystatechange=function(){
+            console.log('1')
+        }
+        xhr.responseType='json'
+        xhr.setRequestHeader('Accpet','application/json')
+        xhr.send()
+    })
+}
+
+getJSON('GET','https://www.baidu.com').then(function(json){
+
+},function(error){
+
+})
+</script>

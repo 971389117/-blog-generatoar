@@ -1,0 +1,56 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+    [v-cloak]:{
+         display: none;
+     }
+</style>
+<div id="app">
+    v-cloak:解决初始化慢导致页面闪动
+    <span v-cloak>{{msg}}</span>
+    <hr>
+    v-once:定义它的元素只渲染一次
+    <span v-once>{{oncedata}}</span>
+    <hr>
+    v-if v-else-if v-else:实时渲染，页面显示就渲染，不显示就移除(ele.remove())
+    <span v-if='6===3'>{{apple}}</span>
+    <span v-else-if='true'>pineapple</span>
+    <span v-else>{{banana}}</span>
+    <hr>
+    v-show:显示与否取决于布尔值（改变 display :none）
+    <span v-show='9>a'>我被渲染了</span>
+    <hr>
+    v-for:
+    （1）遍历多个对象
+        <ul>
+            <li v-for='(vueMth,index) in vueMethods'>{{index}}{{vueMth}}</li>
+        </ul>
+    （2） 遍历一个对象的多个属性  v-k-i <br>
+        <span v-for='(index,key,value) in nvsheng'>{{index}}---{{key}}---{{value}}</span><br>
+        <span v-for='(value,key,index) in nvsheng'>{{index}}---{{key}}---{{value}}</span>
+
+</div>
+<script>
+    //  基本指令
+    // v:cloak
+    let app=new Vue({
+        el: '#app',
+        data: {
+            msg: '村里有个姑娘叫拉芳',
+            oncedata:'长得好看又善良',
+            apple:'apple',
+            banana:'banana',
+            pineapple:'pineaoole',
+            a:3,
+            vueMethods:[
+                {name:'多思考'},
+                {name:'多联系'},
+                {name:'多复习'},
+            ],
+            nvsheng:{
+                girl1:'高圆圆',
+                girl2:'佟丽娅',
+                girl3:'林青霞',
+            }
+        }
+    })
+</script>

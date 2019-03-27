@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .window{
+            width: 960px;
+            height: 540px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .images{
+            display: flex;
+            transition: all 500;
+        }
+        .images>img{
+            width: 100%;
+        }
+        .buttons{
+            text-align: center;
+        }
+    </style>
+
+    <div class="window">
+        <div id='slides' class="images">
+            <img src="./images/11.jpg" alt="图片" width="960" height="540">
+            <img src="./images/13.jpg" alt="图片" width="960" height="540">
+            <img src="./images/14.jpg" alt="图片" width="960" height="540">
+            <img src="./images/15.jpg" alt="图片" width="960" height="540">
+        </div>
+    </div>
+
+    <div id='buttons' class="buttons">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+    </div>
+
+
+    <script>
+        let buttons = document.querySelectorAll('#buttons>button') ;
+        let slides = document.querySelector('#slides') ;
+        let images=document.images
+        let firstCopy=images[0].cloneNode(true)
+        let lastCopy=images[images.length-1].cloneNode(true)
+
+        slides.insertAdjacentElement('afterend',firstCopy)
+        slides.insertAdjacentElement('beforebegin',firstCopy)
+
+        // slides.style.transform="translateX(-960px)"
+        let current = 0
+        // debugger
+        buttons[0].addEventListener('click',function(){
+            slides.style.transform="translateX(0px)"
+            current=0
+        })
+        buttons[1].addEventListener('click',function(){
+            slides.style.transform="translateX(-960px)"
+            current=1
+        })
+        buttons[2].addEventListener('click',function(){
+            slides.style.transform="translateX(-1920px)"
+            current=2
+        })
+        buttons[3].addEventListener('click',function(){
+            slides.style.transform="translateX(-2880px)"
+            current=3
+        })
+    </script>
+</body>
+</html>

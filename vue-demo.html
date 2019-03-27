@@ -1,0 +1,41 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+v-if的实例用法：
+需求：点击按钮，实现用户名输入框和密码输入框的切换
+<div id=app>
+    <div  v-if='type=== "username"' >
+    用户名：<input type="text" placeholder="请输入用户名" key='username'>
+</div>
+<div v-else-if='type==="password"' >
+    密码: <input type="text"  placeholder="密码" key='password'>
+</div>
+<button v-on:click='toggleType'>toggle</button>
+
+
+
+</div>
+
+<hr>
+
+<div id="app2">
+        <!-- 数组更新 .xxxxxxxxxxxx -->
+        <div v-for=''>{{study}}</div>
+</div>
+
+
+
+
+<script>
+    let app=new Vue({
+        el:'#app',
+        data:{
+            type:'username'
+        },
+        methods:{
+            toggleType:function(){
+                console.log(1234)
+                this.type=(this.type==='username'?'password':'username')
+            }
+        }
+    })
+</script>

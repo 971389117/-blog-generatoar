@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="css/KNE-note.css">
+<div class="warrper">
+    <section class="left-bar">
+        <!-- Reduce 简化 Recite 背诵 -->
+        <pre>
+            justify-content
+            align-content
+            align-items
+            align-self
+
+            flex-derection
+            flex-wrap
+            flex-flow
+
+            flex-grow
+            flex-shrink
+            flex-basis
+            flex
+
+            order 0
+        </pre>
+    </section>
+
+    <main class="main">
+        <!-- Record 记录 -->
+        <h3>控制对其的属性</h3>
+        <h4>justify-content 和 align-content</h4>
+        作用：主轴对齐
+        tips:align-content的作用是多行时的交叉轴对齐，和 justify-content 相对应，如果只有一行，则该属性无作用
+        <pre>
+            justify-content和 align-content的属性：
+                flex-start
+                flex-end
+                center
+                space-between 两端对齐，平均分配剩余空间
+                space-around around是环绕的意思，意思是每个flex子项两侧都环绕互不干扰的等宽的空白间距，最终视觉上边缘两侧的空白只有中间空白宽度一半。使用抽象图形示意如下：
+                stretch
+                space-evenly evenly是匀称、平等的意思。也就是视觉上，每个flex子项两侧空白间距完全相等。使用抽象图形示意如下：
+        </pre>
+        <h4>flex-wrap</h4>
+        <p>flex 会自动安排子元素的宽度，默认为包裹性；如果父元素的宽度不够，子元素会溢出父容器。</p>
+        <p>如果设置了witdh，效果如下，自行体会</p>
+        flex-wrap作用：当父元素装不下时，允许换行(每一行都是独立的 flex 容器)
+        <div class="flex1">
+            <!-- 1111111111111111111111111111111111111111111111111111111111111111112 -->
+                <div class="flex-child">11111</div>
+                <div class="flex-child">11111</div>
+                <div class="flex-child">11111</div>
+                <div class="flex-child">11111</div>
+                <div class="flex-child">11111</div>
+            </div>
+        简写方向和换行：【 flex-flow:row wrap 】
+        <h4>align-items 和 align-self</h4>
+        <p>作用：对齐，align-items作用于父元素，对齐全部子元素；align-self作用于子元素，对齐单个子元素；</p>
+        <p>flex子元素会自动把父元素的交叉轴撑满（如果父元素定义了高度）</p>
+        <div class="flex">
+            <div class="flex-child">1</div>
+            <div class="flex-child">2</div>
+            <div class="flex-child">3</div>
+            <div class="flex-child">4</div>
+            <div class="flex-child">5</div>
+        </div>
+        为什么呢？因为 <code>align-items</code> 初始值是 <code>stretch</code> ，控制交叉轴对齐。
+        <pre>
+            align-items的属性：
+                flex-start 开始对齐
+                flex-end 结束对齐
+                center 居中对齐
+                stretch 撑满整个容器（交叉轴）
+                baseline 基线对齐
+            align-self的属性：
+                和上面一样，只是多了一个 <code> auto</code>，等价于继承 <code> align-items</code>
+        </pre>
+        <style>
+            .flex,.flex1{
+            display: flex;
+            height: 100px;
+            /* justify-content: */
+        }
+        .flex1{
+            width: 1000px;
+            flex-wrap: wrap;
+        }
+        .flex1>div{
+            width: 300px;
+        }
+        .flex>div{
+            background-color:orange;
+            border: 1px solid #000;
+        }
+        .push{
+            margin-left: auto;
+        }
+        </style>
+
+        <p>看一下margin：auto对flex布局的影响</p>
+        margin:auto会让 flex 子元素呈现包裹性，并让 margin 占据全部剩余空间， 如果只有一侧，将会被推开，如果有两侧 auto，将会居中
+        <div class="flex">
+            <div>1</div>
+            <div >2</div>
+            <div>3</div>
+            <div class="push">4</div>
+            <div>5</div>
+        </div>
+
+        <h3>flex 元素上的属性</h3>
+        <span>flex-basis</span>
+        1.在任何空间分配发生之前初始化 flex 元素的尺寸，初始值为 auto
+        2.如果子项设置了 width，就是 width 的值，如果没有，就是元素内容大小。默认为 auto
+        <span>flex-grow </span> 拉伸
+        <span>flex-shrink</span> 收缩
+        <span>flex</span> [flex-grow flex-shrink flex-basis]
+        <pre>
+            basis
+                length:10em 3px ...
+                关键字：
+                    fill
+                    max-content
+                    min-content
+                    fit-content
+        </pre>
+        auto，
+    </main>
+
+    <section class="summa">
+        <!-- Reflect 思考 Review 复习-->
+    </section>
+</div>

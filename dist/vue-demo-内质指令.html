@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>[v-cloak]:{
+         display: none;
+     }</style>
+<div id="app">
+    v-cloak:解决初始化慢导致页面闪动
+    <span v-cloak="">{{msg}}</span>
+    <hr>
+    v-once:定义它的元素只渲染一次
+    <span v-once="">{{oncedata}}</span>
+    <hr>
+    v-if v-else-if v-else:
+    <span v-if="6===3">{{apple}}</span>
+    <span v-else-if="true">pineapple</span>
+    <span v-else="">{{banana}}</span>
+</div>
+<script>//  基本指令
+// v:cloak
+var app = new Vue({
+  el: '#app',
+  data: {
+    msg: '村里有个姑娘叫拉芳',
+    oncedata: '长得好看又善良',
+    apple: 'apple',
+    banana: 'banana',
+    pineapple: 'pineaoole'
+  }
+});</script>
