@@ -1,0 +1,33 @@
+<div id="app">
+    我们的 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur excepturi tempore nulla illum consequuntur voluptatem, sint ut, tempora veniam voluptate, accusantium distinctio alias cumque ullam! Dolorum at nihil delectus eligendi.
+</div>
+
+<script>
+    const app = document.querySelector('#app')
+    setInterval(()=>{
+        console.log(app.scrollTop)
+    },1000)
+
+
+</script>
+<!--
+在掘金上看了一篇文章,对此持一点怀疑?难道说一整个网页只要改两个字的颜色就会导致整体 repaint 吗?等待求证!
+    避免 reflow 风险
+我们知道修改某些 CSS 属性会导致整个页面布局的重绘( repaint )/重排( reflow )。
+
+repaint 的速度远快于 reflow，所以避免 reflow 更重要
+
+导致 repaint 和 reflow 的原因
+
+DOM 元素的添加、修改、删除（repaint、reflow）
+仅仅修改 DOM 元素的字体颜色（repaint，不需要调整布局）
+应用新的样式或者修改任何影响元素外观的属性（repaint、reflow）
+resize，页面滚动（repaint、reflow）
+读取元素的某些属性（offsetTop/Left/Width/Height、getComputedStyle、scrollTop/Left/Width/Height、clientTop/Left/Width/Height等）（repaint、reflow）
+
+如果在大量的元素上更改这些属性，那么计算和更新他们的位置/大小需要花费很长的时间。
+
+作者：小生方勤
+链接：https://juejin.im/post/5d15749af265da1baa1e8750
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 -->

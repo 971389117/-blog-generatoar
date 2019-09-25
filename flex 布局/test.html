@@ -1,0 +1,139 @@
+<script src="j.js"></script>
+
+
+<div class="wraper">
+    <div class="logo">
+        <img src="logo.png" alt="">
+    </div>
+    <ul class="list">
+        <li><a href="#">课程</a></li>
+        <li><a href="#">实战课程</a></li>
+        <li><a href="#">就业办</a></li>
+        <li><a href="#">专栏</a></li>
+        <li><a href="#">猿问</a></li>
+        <li><a href="#">手记</a></li>
+    </ul>
+    <input class="search"></input>
+    <div class="xxx"></div>
+    <ul class="information">
+        <li><a href="#">邀请有奖</a></li>
+        <li>下载 APP</li>
+        <button>购物车</button>
+        <i class="xiaodingling"></i>
+        <img src="unknow-160.png" alt="">
+</div>
+</div>
+<style>
+    .xxx {
+        flex: 1;
+    }
+
+    * {
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+    .wraper {
+        display: flex;
+        /* flex-wrap: wrap; */
+        align-items: center;
+        height: 72px;
+        box-shadow: 0 4px 8px 0 rgba(7, 17, 27, 0.1);
+    }
+
+    .logo {}
+
+    .list {
+        display: flex;
+        padding-left: 0;
+        /* flex-grow: 1; */
+    }
+
+    .list>li {
+        white-space: nowrap;
+        /* padding:  */
+    }
+
+    .search {
+        display: flex;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        padding: 12px;
+        width: 300px;
+        margin-left: 100px;
+    }
+
+    .search:focus {
+        outline: none;
+        border-bottom-color: #f00;
+    }
+
+    .information {
+        display: flex;
+        align-items: center;
+        color: #666;
+    }
+
+    .information a:hover,
+    .information li:hover,
+    .information button:hover {
+        color: red;
+        border-color: #f00;
+    }
+
+    .information>a {
+        color: #666;
+    }
+
+    .information>button {
+        background-color: #fff;
+        border-radius: 18px;
+        padding: 0 15px;
+        display: flex;
+        margin-right: 20px;
+    }
+
+    .information>button::after {
+        display: block;
+        content: "⭐";
+        order: -1;
+        padding-right: 10px;
+    }
+
+    .information>img {
+        height: 32px;
+        width: 32px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    .information>img:hover {
+        border-color: #f00;
+    }
+
+    li {
+        padding: 0 18px;
+        list-style-type: none;
+    }
+
+    li:first-child {
+        padding-left: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    @media(max-width:1205px) {
+        .list {
+            background: #000;
+            display: none;
+        }
+    }
+</style>

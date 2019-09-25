@@ -1,0 +1,30 @@
+<meta http-equiv="refresh" content="1">
+<style>
+    /* 利用opacity透明度来隐藏，opacity设置为0，它只是一种视觉隐藏，元素本身依旧占用它的位置并对网页的布局起到作用，它也同样影响用户交互。在读屏软件中会被识别。 */
+    .opacity {
+        width: 100px;
+        height: 100px;
+        background: #000;
+        opacity: .3;
+    }
+/* visibility：规定元素 是否可见，一般设置为hidden，它可以很好的隐藏，不会影响用户的交互，在读屏软件中不会被识别。 */
+    .visibility {
+        width: 100px;
+        height: 100px;
+        background: #000;
+        visibility: hidden;
+    }
+/* display：当display设置为none，任何对该元素直接打用户交互操作都不可能生效，被隐藏的元素完全不会占用空间，仿佛元素完全不存在一样。 */
+.display{
+    width:100px;
+    height:100px;
+    background:#333;
+    display: none;
+    }
+    /* position 到可视范围之外 */
+    
+</style>
+
+<div class="opacity"></div>
+<div class="visibility"></div>
+<div class="display"></div>

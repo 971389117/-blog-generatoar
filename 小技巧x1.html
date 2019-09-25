@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="css/KNE-note.css">
+<div class="warrper">
+    <section class="left-bar">
+        <!-- Reduce 简化 Recite 背诵 -->
+        <ul>
+            <li>逗号运算符</li>
+            <li>delete 运算符</li>
+            <li>in 和 for in 运算符</li>
+        </ul>
+    </section>
+
+    <main class="main">
+        <!-- Record 记录 -->
+        <h3>逗号运算符</h3>
+        <pre>
+        let x=3
+        let p=(console.log('开始了'),console.log('对 x 做了一些操作'),x+=7,console.log('最终返回 x'),x)
+        </pre>
+        <h3>delete 运算符</h3>
+        <pre>
+        let obj={o:1}
+        delete obj.o  // true
+        delete obj.o1 // true
+        // 一直返回 true ，只有 delete 的属性 “存在，且不可删除”时，否会 false
+        </pre>
+        <h3>in 和 for in 运算符</h3>
+        <dl>
+            <dt>in</dt>
+            <dd>继承的属性也会返回 true</dd>
+            <dt>for in</dt>
+            <dd>遍历所有 enumerable:true 的属性</dd>
+        </dl>
+        <pre>
+            场景 1：遍历自身所有可遍历的属性
+            function Animal(name){
+                this.name=name;
+            }
+            function Cat(age){
+                this.age=age
+            }
+            Cat.prototype=new Animal('猫咪')
+            let cat = new Cat(18)
+
+            for(let i in cat){
+                if(cat.hasOwnProperty(i)){
+                    console.log(i)
+                }
+            }
+        </pre>
+        <h3>数组的遍历</h3>
+        <ul>
+            <li>用 while 或 for 循环遍历</li>
+            <li>用 forEach 遍历</li>
+        </ul>
+        <pre>
+        // forEach 循环
+        var colors = ['red', 'green', 'blue'];
+        colors.forEach(function (value,index,arrSelf) {
+            console.log(color,index,arrSelf);
+        });
+        </pre>
+    </main>
+
+    <section class="summa">
+        <!-- Reflect 思考 Review 复习-->
+    </section>
+</div>

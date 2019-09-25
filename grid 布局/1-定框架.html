@@ -1,0 +1,66 @@
+<div class="parent">
+    <div class="child">embarrass</div>
+    <div class="child">plastic</div>
+    <div class="child">fair</div>
+
+
+    <div class="child">fare</div>
+    <div class="child">fire</div>
+    <div class="child">free</div>
+    <div class="child">stroll</div>
+    <div class="child">stroller</div>
+    <div class="child">require</div>
+</div>
+
+<style>
+    .parent {
+        height: 100vh;
+        background-color: #ccc;
+
+
+        display: grid;
+        grid-template-rows: 100px 150px 100px;
+        grid-template-columns:120px 200px 100px ;
+        grid-template-areas:
+        "mettle mettle judge"
+        "plastic material material"
+        "plastic stroll stroll";
+        /* 下面是上面的缩写 */
+        /* grid-template:
+        "mettle mettle judge"100px
+        "plastic material material"150px
+        "plastic stroll stroll"100px/120px 200px 100px; */
+
+        /* grid-template: 100px 100px 100px/100px 100px 100px */
+
+        grid-gap: 10px 20px;
+
+        /* 对内对齐方式:默认是占据整个网格的,设置网格内容的居中 */
+        /* justify-items: center;
+        align-items: center; */
+        /* 对外对齐方式:网格是内容,parent 是容器,容器空间大于内容时,怎么排列 */
+        justify-content: center;
+        align-content: center;
+        /* align-items: center; */
+    }
+    .child:first-child{
+        grid-area: mettle;
+        background-color: blue;
+    }
+    .child:nth-child(2){
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        background-color: orange;
+    }
+    .child:nth-child(3){
+        grid-row: 2/3;
+        grid-column: 2/span 2;
+        background-color: green;
+
+        /* justify-self: end;
+        align-self: center;
+        place-self: center center; */
+    }
+</style>

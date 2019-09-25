@@ -1,0 +1,50 @@
+<div class="wrap">
+    <div class="div">
+            owafjsadljlfkad
+
+    </div>
+    <div class="div div2">div2</div>
+    <div class="div">
+        owafjsadljlfkafdadsfsaad
+    </div>
+    <div class="div div1">div1</div>
+    <div class="div"></div>
+</div>
+<style>
+    .wrap {
+        border: 1px solid #000;
+        height: 500px;
+        display: flex;
+        /* 方向 */
+        /* flex-direction: row-reverse; */
+        /* 折行 */
+        flex-wrap: nowrap;
+        /* 方向与折行 */
+        /* flex-flow: column wrap; */
+        /* 水平方向怎么对齐 */
+        justify-content: center;
+        /* 整体垂直方向怎么对齐 */
+        /* align-items: center; */
+        /* baseline
+        表现为所有flex子项都相对于flex容器的基线（字母x的下边缘）对齐。 */
+        /* 当有多行时，垂直方向每一行怎么对齐 */
+        /* align-content: center */
+    }
+    .div {
+        margin: 10px;
+        width: 120px;
+        height: 50px;
+        background-color: #f00;
+    }
+    .div.div1 {
+        background-color: #0f0;
+        /* flex 子项的次序 默认 0 */
+        order: -1;
+
+        /* 扩展剩余空间 总数 1 默认 0 */
+        flex-grow: .1;
+
+        /* 当空间不够时收缩 默认是 1 */
+        flex-shrink: 2;
+    }
+</style>

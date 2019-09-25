@@ -1,0 +1,58 @@
+<style>
+    * {
+        background-color: rgba(0, 0, 0, .1);
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        padding: 2em;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    li {}
+
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .some{
+        position: relative;
+    }
+    .some>.hover-show {
+        /* visibility: hidden; */
+    }
+
+    .some:hover>.hover-show {
+        visibility: visible;
+    }
+
+    .some>.sub-ul {
+        position: absolute;
+        top:100%;
+        left:0;
+        flex-direction: column;
+    }
+    .some>.sub-ul>li{
+        min-width:4em;
+        max-width: 6em;
+    }
+    .some>.sub-ul>li{
+        padding: .5em 2em;
+    }
+</style>
+
+<ul class="">
+    <li class="some">
+        <a href="#">中国大陆</a>
+        <ul class="hover-show sub-ul">
+            <li>中国香港</li>
+            <li>中国台湾</li>
+            <li>中国新加坡</li>
+            <li>中国纽约</li>
+        </ul>
+    </li>
+</ul>

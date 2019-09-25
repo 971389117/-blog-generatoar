@@ -1,0 +1,83 @@
+<style>
+    * {
+        background: rgba(0, 0, 0, .1);
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+        float: left;
+    }
+
+    .icon>img {
+        height: 72px
+    }
+
+    .header {
+        display: flex;
+        /* justify-content: center; */
+        /* align-content: center; */
+        align-items: center;
+    }
+
+    input {
+        /* flex-grow: 1; */
+        width: 300px;
+        margin-left: 30px;
+    }
+
+    .white-block {
+        flex-grow: 1;
+    }
+
+    .list {
+        /* height: 72px; */
+    }
+
+    .list>li {
+        padding: 0 20px;
+        height: 72px;
+        line-height: 72px;
+    }
+    .menu{
+
+    }
+    .menu>span{
+        width: 72px;
+        margin: 10px;
+    }
+    .new{
+        position: relative;
+    }
+    .new::after{
+        content: 'N';
+        display: block;
+        position: absolute;
+        top:-100%;
+        left:0;
+    }
+</style>
+<header class="header">
+    <a class='icon' href="https://www.imooc.com/">
+        <img src="https://www.imooc.com/static/img/index/logo.png" alt="">
+    </a>
+    <ul class='list'>
+        <li>课程</li>
+        <li>实战课程</li>
+        <li class="new">就业办</li>
+        <li>专栏</li>
+        <li>猿问</li>
+        <li>手记</li>
+    </ul>
+    <input type="text">
+    <div class="white-block"></div>
+    <div class="menu">
+        <span class="invite">邀请有奖</span>
+        <span class="download-app">下载 APP</span>
+        <span class="shopping-cart">购物车</span>
+    </div>
+</header>
+<footer>
+
+</footer>

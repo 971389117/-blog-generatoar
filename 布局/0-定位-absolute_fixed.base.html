@@ -1,0 +1,66 @@
+<!--
+
+    郑昕: Jun 4, 2019 5:28 PM
+    ------------------------
+    绝对定位元素（absolutely positioned element）
+        是计算后位置属性为 absolute 或 fixed 的元素。
+    1.尺寸
+        - 大多数情况下，height和width 被设定为auto的绝对定位元素，按其内容大小调整尺寸。但是，
+        - 被绝对定位的元素可以通过指定top和bottom ，保留height未指定（即auto），来填充可用的垂直空间。
+          它们同样可以通过指定left 和 right并将width 指定为auto来填充可用的水平空间。
+    2.脱离了文档流
+        在布置文档流中其它元素时，绝对定位元素不占据空间。
+    3.相对定位元素
+        absolute:相对于最近的非 static 的祖先元素
+        fixed：相对于 viewport 定位
+    4.层叠关系
+        默认：绝对定位 > 固定定位 > 相对定位
+        z-index：越大，优先级越高
+
+
+    相对定位元素
+    1.不脱离文档流
+        该关键字下，元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）
+
+    ！ static布局 z-index 属性无效
+
+
+    ？绝对定位的元素可以设置外边距（margins），且不会与其他边距合并。
+ -->
+<div class="relative"></div>
+<div class="fixed"></div>
+<div class="absolute"></div>
+<style>
+    .fixed {
+        /* width:100px; */
+        /* height:100px; */
+        background: #ccc;
+        position: fixed;
+        top: 200px;
+        bottom: 200px;
+        left: 100px;
+        right: 100px;
+        border: 10px solid orange;
+        z-index: 100;
+    }
+
+    .absolute {
+        width: 500px;
+        height: 500px;
+        background-color: rgba(33, 33, 33, .2);
+        position: absolute;
+        border: 10px solid blue;
+        top: 300px;
+        z-index: 99;
+    }
+
+    .relative {
+        width: 500px;
+        height: 500px;
+        background-color: rgba(206, 145, 145, 0.2);
+        border: 10px solid #000;
+        z-index: 990;
+        position: relative;
+        top:10px;
+    }
+</style>

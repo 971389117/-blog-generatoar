@@ -1,0 +1,72 @@
+<!--
+    郑昕: Jun 5, 2019 1:34 PM
+    ------------------------
+ -->
+
+
+<body class="loading-active">
+    <div class="loading"></div>
+    <div id='wrapper' class="wrapper wrapper-opacity">
+
+    </div>
+</body>
+
+
+<style>
+    /* --------------- 1.做动画，居中 ----------------- */
+    .loading::after,
+    .loading::before {
+        content: '';
+        display: block;
+        background-color: #000;
+        border-radius: 50%;
+        animation: s 3s linear infinite;
+
+        /* 居中 */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* 动画延迟 */
+    .loading::after {
+        animation-delay: 1.5s;
+    }
+
+    @keyframes s {
+        0% {
+            height: 0;
+            width: 0;
+            opacity: 1;
+        }
+
+        100% {
+            width: 80px;
+            height: 80px;
+            opacity: 0;
+        }
+    }
+
+    /* 2. 设置背景样式 */
+    .loading-active {
+        overflow: hidden;
+        background: #ccc;
+    }
+
+    /* 3. 隐藏其它内容 */
+    .wrapper-opacity {
+        opacity: 0;
+    }
+</style>
+<script>
+    // document.body.classList.remove('loading-active')
+    // 4.当站点载入以后，取消载入动画
+    window.addEventListener("load", function (e) {
+        setTimeout(() => {
+            document.body.classList.remove('loading-active')
+            wrapper.classList.remove('wrapper-opacity')
+        }, 5000)
+
+    });
+</script>
